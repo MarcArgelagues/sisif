@@ -187,7 +187,7 @@ const pipe = {
     if (player.gameActive) {
       if (screenFrame % 135 == 0) {
         // ? AUTOPLAYING
-        let ren = -45 * Math.min(Math.random() + 0.9, 1.7);
+        let ren = -210 * Math.min(Math.random() + 0.9, 1.7);
         this.pipe.push({
           x: parseFloat(canvas.width),
           y: ren,
