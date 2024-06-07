@@ -170,7 +170,7 @@ const pipe = {
   topPipe: { pipeImg: new Image() },
   bottomPipe: { pipeImg: new Image() },
   pipe: [],
-  pipeGap: 85,
+  pipeGap: 120,
   move: true,
   drewPipe() {
     for (let i = 0; i < this.pipe.length; i++) {
