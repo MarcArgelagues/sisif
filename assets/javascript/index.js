@@ -160,7 +160,7 @@ const ground = {
   updateGround() {
     if (player.gamePlaying) {
       this.position.x -= this.dx;
-      this.position.x = this.position.x % (this.groundImg.width / 14);
+      this.position.x = this.position.x % (this.groundImg.width / 1000);
     }
   },
 };
@@ -187,7 +187,7 @@ const pipe = {
     if (player.gameActive) {
       if (screenFrame % 135 == 0) {
         // ? AUTOPLAYING
-        let ren = -210 * Math.min(Math.random() + 0.9, 1.7);
+        let ren = -45 * Math.min(Math.random() + 0.9, 1.7);
         this.pipe.push({
           x: parseFloat(canvas.width),
           y: ren,
@@ -261,41 +261,32 @@ const UI = {
     this.drewScore();
   },
   drewScore() {
-    canvasTx.fillStyle = "#2d8b26";
-    canvasTx.font = "20px monospace";
+    canvasTx.fillStyle = "#fff"; // Groc
+   
+    canvasTx.lineWidth = 0.1; // Amplada del contorn
+  
+    canvasTx.font = "10px UNBOUNDED";
     if (player.gamePlaying) {
       canvasTx.fillText(
-        `Score:${this.score[0].current}`,
+        `Score: ${this.score[0].current}`,
         canvas.width / 20,
-        canvas.height - 60
+        canvas.height - 10
       );
-      canvasTx.strokeText(
-        `Score:${this.score[0].current}`,
-        canvas.width / 20,
-        canvas.height - 60
-      );
+     
     } else if (player.gameActive) {
       canvasTx.fillText(
-        `Best:${localStorage.getItem("best")}`,
+        `Best: ${localStorage.getItem("best")}`,
         canvas.height / 20,
-        canvas.height - 60
+        canvas.height - 10
       );
-      canvasTx.strokeText(
-        `Best:${localStorage.getItem("best")}`,
-        canvas.height / 20,
-        canvas.height - 60
-      );
+      
     } else {
       canvasTx.fillText(
-        `Your Score:${this.score[0].current}`,
+        `Your Score: ${this.score[0].current}`,
         canvas.height / 20,
-        canvas.height - 60
+        canvas.height - 10
       );
-      canvasTx.strokeText(
-        `Your Score:${this.score[0].current}`,
-        canvas.height / 20,
-        canvas.height - 60
-      );
+      
     }
   },
   updateUI() {
@@ -370,8 +361,7 @@ pipe.bottomPipe.pipeImg.src = "assets/images/pipe_img/botpipe.png";
 // TODO UI IMGS
 UI.game[0].start.src = "assets/images/start&over_game_img/getready.png";
 UI.game[1].over.src = "assets/images/start&over_game_img/gameOver.png";
-UI.tap[0].tapImg.src = "assets/images/start&over_game_img/1_tap.png";
-UI.tap[1].tapImg.src = "assets/images/start&over_game_img/2_tap.png";
+
 // TODO AUDIO SRC
 SFX.start.src = "assets/audio/Main_sounds/start.wav";
 SFX.flap.src = "assets/audio/Main_sounds/flap.wav";
