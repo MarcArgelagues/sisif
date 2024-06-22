@@ -14,10 +14,13 @@ const player = {
 // ────────────────────────────────────────────────────────────────────────────────────────────────── I ──────────
 //   :::::: M A I N   F U C N T I O N S   S E E   D O W N   B E L O W : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────────────────────────────────────────────
-["keydown", "click"].forEach((event) => {
+["keydown", "touchstart"].forEach((event) => {
   window.addEventListener(
     event,
-    () => {
+    (e) => {
+      // Evita la selecció automàtica
+      e.preventDefault();
+
       if (player.gameActive) {
         player.gameActive = false;
         player.gamePlaying = true;
