@@ -261,30 +261,31 @@ const UI = {
     this.drewScore();
   },
   drewScore() {
-    canvasTx.fillStyle = "#fff"; // Groc
+    canvasTx.fillStyle = "#355e2f"; // Groc
    
     canvasTx.lineWidth = 0.1; // Amplada del contorn
   
-    canvasTx.font = "10px UNBOUNDED";
+    canvasTx.font = "10px Gelio";
     if (player.gamePlaying) {
       canvasTx.fillText(
-        `Score: ${this.score[0].current}`,
+        `Puntuació: ${this.score[0].current}`,
         canvas.width / 20,
         canvas.height - 10
       );
      
     } else if (player.gameActive) {
       canvasTx.fillText(
-        `Best: ${localStorage.getItem("best")}`,
+        `Top: ${localStorage.getItem("best")}`,
         canvas.height / 20,
         canvas.height - 10
       );
       
     } else {
       canvasTx.fillText(
-        `Your Score: ${this.score[0].current}`,
+        `La teva puntuació: ${this.score[0].current}`,
         canvas.height / 20,
-        canvas.height - 10
+        canvas.height - 10,
+      
       );
       
     }

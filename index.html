@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spiky Steebooooor </title>
-    <!--─── CSS LINK ───────-->
+    <title>Maledicció de Sísif</title>
+    <!--─── BOOTSTRAP CSS ───────-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--─── CUSTOM CSS ───────-->
     <link rel="stylesheet" href="assets/css/style.css">
-       <!--─── GAME LOGIC ──────────────────────────────-->
-<script defer src="assets/javascript/index.js"></script>
+    <!--─── GAME LOGIC ───────-->
+    <script defer src="assets/javascript/index.js"></script>
+    <style>
+        .text-box {
+            border: 1px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #b6a469;
+        }
+    </style>
 </head>
 <body>
-   <main>
-       <div class="gameDetail">
-<h1 class="title">Spiky Steebooooor</h1>
-       </div>
-       <canvas id="canvas"></canvas>
-
-       
-   </main> 
+    <main class="container mt-5">
+        <div class="text-box">
+            <h2 class="mb-5">MALEDICCIÓ DE SÍSIF</h2>
+            <p class="lead">
+                Els déus van condemnar a Sísif a pujar sense cessar una roca fins al cim d'una muntanya, des d'on la pedra tornava a caure pel seu propi pes.
+                Pensaven, no sense raó, que no hi ha càstig més terrible que el treball inútil i sense esperança. 
+            </p>
+            <h2 class="mb-5 mt-5">INSTRUCCIONS</h2>
+            <p class="lead">
+                Premeu qualsevol tecla per començar a jugar. Eviteu els obstacles i continueu fent rodar la pedra el màxim temps possible.
+            </p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <canvas id="canvas" class="border border-dark"></canvas>
+            </div>
+        </div>
+    </main>
+    <!--─── BOOTSTRAP JS ───────-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
