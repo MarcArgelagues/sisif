@@ -268,7 +268,7 @@ const UI = {
    
     canvasTx.lineWidth = 0.1; // Amplada del contorn
   
-    canvasTx.font = "10px Gelio";
+    canvasTx.font = "10px monospace";
     if (player.gamePlaying) {
       canvasTx.fillText(
         `Puntuació: ${this.score[0].current}`,
